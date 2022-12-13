@@ -2,3 +2,4 @@ hello this is profile,txt file
 and it contains sample data 
 for practicing. 
 this is for fetch command
+this line for pull command
