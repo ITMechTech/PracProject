@@ -1,0 +1,4 @@
+item	 menuprice	 quantity	 totalprice
+MatkaPaneer		 280		 2		 560
+MatkaPaneer		 280		 2		 560
+Please pay 1120

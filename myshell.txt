@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "hello"
+echo "hello" | rev
+echo "hello" | tr 'a-z' 'A-Z'
+
+echo "The process name: $0"
+echo "The process ID: $$"
+echo "The parent process ID: $PPID"
+ps
+echo "I am sleeping"
+sleep 70
+echo "I woke up"

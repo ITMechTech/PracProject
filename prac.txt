@@ -1,0 +1,145 @@
+ASSIGNMENT -5
+
+Ans:- md5sum
+Q2. What command is used to show the unique id attached with each file.
+Ans :- echo 
+Q4. What command you will use to know the current path you are in
+Ans :- pwd
+Q5.What 
+Ans:- The inode number refers to the physical file, the data stored in a particular location.
+Process id (PID) is the operating system's unique identifier for active programs that are running.
+Q6. What is the difference between single quote('), double quote(") and back quote (`)?
+Ans:- 
+Q7. What are the different ways we can see about the users?
+Ans :- cat /etc/passwd, whoami, id, 
+Q8. Describe the significance of PATH variable in linux.
+Ans:- a path (or the search path) is the list of directories that will be searched for anything that you type on the command line. If you type in a built-in command like ls, it will look for a specified list of directories. You can look up your path by typing echo $PATH
+Q9. How to see the Kernel name and Kernel version of the linux system?
+Ans:- kernel name :-uname –r , kernel version:- uname –v 
+Q10. saurabh is the command to display which kernel you are using ?
+Ans :- uname –r 
+Q11. Command for display today's date in the format 21//Feb/2022 10:15 AM
+Ans:- date +’%d/%b/%Y %p’
+Q12. How to see the last 5 login information.
+Ans :-last
+Q13. How to create a hidden file in linux?
+Ans:- vi .filename
+Q14. How to replace all the words mango with Orrange from Line number 5 to Line number 20 in a file.
+Ans:-:5,20s/mango/orange/g
+Q15. How to delete 5 words in backword direction?
+Ans:- d5b delete 5 words in backword direction
+Q16. How to copy 5 lines from current cursor position?
+Ans:- 5yy 
+Q17. What command you will use for removing unnecessary blank lines from a files's content?
+Ans:-
+Q18. What is the command to display line number only for the lines which contains data?
+Ans :- cat –b filename
+Q19. How to see the tabs present inside a file?
+Ans :- cat –et filename
+Q20. What is a variable and write the benifits of having variables.
+Ans :-
+Q21. How to see all the environment variables?
+Ans :- env 
+Q22. Suppose I have a word 'mango'. What command I will use to generate the output as 'ognam'?
+Ans :- rev
+Q23. Can we apply touch command on an existing directory in Linux. If yes, directory after applying the touch command on the directory?
+Ans :- we can apply touch command on directory also its change the time stam of directory
+Q24. How to remove a directory having it's subdirectories and files.
+Ans:- rm –rv directory 
+Q25. We can use tar command to decrease the size of a file . True / False ?
+Ans:- true because directly file  not convert into zip file so first need to file convert into tar file then do gzip to file 
+Q26. In which scenario md5sum command is helpful , describe with scenario.
+Ans :- md5sum is used to verify the integrity of files, as virtually any change to a file will cause its MD5 hash to change. Most commonly, md5sum is used to verify that a file has not changed as a result of a faulty file transfer, a disk error or non-malicious meddling.
+Q27. How to see the file name and their corresponding inode number along with size of all files in appropriate unit such as(KB, MB, GB...)
+Ans:- ls -ltrih
+Follow the Data set present in file emp.txt and answer the remaining questions from Q28 to 41.
+M_ID,M_NAME,DEPT_ID,START_DATE,END_DATE,Salary
+M001,Richa,D001,27-Jan-07,27-Feb-07,150000
+M002,Nitin,D002,16-Feb-07,16-May-07,40000
+M003,AJIT,D003,8-Mar-07,8-Sep-07,70000
+M004,SHARVARI,D004,28-Mar-07,28-Mar-08,120000
+M005,ADITYA,D002,27-Apr-07,27-Jul-07,40000
+M006,Rohan,D004,12-Apr-07,12-Apr-08,130000
+M007,Usha,D003,17-Apr-07,17-Oct-07,70000
+M008,Anjali,D002,2-Apr-07,2-Jul-07,40000
+M009,Yash,D006,11-Apr-07,11-Jul-07,85000
+M010,Nalini,D007,15-Apr-07,15-Oct-07,9999
+
+Q28. How to display the records which are belongs to Department D003 and D006.
+Ans:- sed -ne '/D003/p' -e '/D006/p' emp.txt
+Q29. Sort the data according to descending order of the Name
+Ans:- sort –t “,” –nrk2 emp.txt
+Q30. How to display the records of only department ID D002 along with Heading line.
+Ans :- 
+Q31. Display the records who were joined on the Mar-07 
+Ans:- sed -n '/Mar-07/p' emp.txt
+Q32. Display the records who joined on Mar-07 and Left the organisation on Apr-08.
+Ans :- sed -ne '/Mar-07/p' -e '/Apr-08/p' emp.txt ----------
+Q33. Display the records according to the descending order of their salary.
+Ans:- sort –t “,” –nrk6 emp.txt
+Q34. Display the count of Dept D004 records 
+Ans :-
+awk ‘BEGIN{FS=”,”:D1SUM=0} { if ($3==”D004”) { D1SUM=D1SUM+$6} } END{print D1SUM}’
+Q35. Display the Average salary of Department D003.
+Q36. Display the Total salary of Department D003 and Total salary of Department D004 using one command line.
+Ans:-
+awk 'BEGIN{FS="," ; D1SUM=0 ; D2SUM=0} { if($3=="D003") { D1SUM=D1SUM+$6 } else if($3=="D004"){D2SUM=D2SUM+$6} } END {print D1SUM,D2SUM}' emp.txt
+Q37. Display the records from line number 4 to 8.
+Ans :- sed -n '4,8 p' emp.txt
+Q38. Write command to collect all the department Ids and display all the departments as D001,D002,D003,D004,D006,D007
+Ans :-
+Q39. Write shell script for find the count the rows department wise. For Example
+     D001 : 1
+     D002 : 3
+     D003 : 2
+     ......
+     .......
+     And so on
+Ans :- #!/bin/bash
+DEPTLIST=`cat emp.txt | cut –d”,” –f3 | sort -u`
+for DEPT in ${DEPTLIST}
+do
+    echo ${DEPT} : `grep “${DEPT}” emp.txt | awk ‘BEGIN{FS=”,”} {print NF}’
+    echo
+    sleep 2
+done ---------------------------
+
+Q40. From the above data set display the data in below format. This concept in SQL is called list aggregate.
+	D001 : Richa
+	D002 : Nitin, ADITYA, Anjali
+	D003 : AJIT, Usha
+	D004 : SHAVARI, Rohan
+	D006 : Yash
+	D007 : Nalini
+Ans :-
+ #!/bin/bash
+
+DEPTLIST=`cat goodemp.txt | cut -d"," -f3 | sort -u`
+echo ${DEPTLIST}
+
+for DEPT in ${DEPTLIST}
+do
+     echo ${DEPT}:`grep "${DEPT}" goodemp.txt | cut -d"," -f2 | tr '\n' ',' | sed -e 's/,$//'`
+     sleep 2
+done
+Q41. Display the M_ID, DEPT_ID, NAME and SALARY of employees having salary ranges from 85000 and 120000.
+
+Q42. Write a command which will display all the files which are more than 20 MB in size and 90 days older file.
+Ans :- find ./ -size +20 –mtime +90
+Q43. How to zip all the files which are not accessed since last 3 year.
+Q44. What is the difference between find command and grep command?
+Ans:- Use grep to select lines from text files that match simple patterns. Use find to find files and directories whose names match simple patterns.
+Q45. What is the difference between cut command and awk command?
+Ans :- cut accepts a single-character delimiter, and is suitable only for very simple text file formats. Awk is much more versatile, and can handle somesaurabh more complex field delimiter definitions and even (in some dialects) a regular expression. By default, Awk regards sequences of whitespace as a single delimiter.
+Q46. Which command you will use, if the admin sends al limit of your display space.
+Ans:- df command
+Q47. How to create a package in Linux?
+Ans:-
+Q48. Suppose I am deleting a file. But I am not able to delete the file. What would be the reason?
+Ans:- The most common reason for rm complaining that you don't have permission to delete a file, is that the permissions on the directory forbid you from deleting the file. In order to delete a file, you need write permission on the directory.
+Q49. How to Restrict the other users from write operation on a file?
+Ans :-
+Ans :- 666 is umask for default permission 
+Q50. What should be the umask value to set the default permission of file as rwxrw-rw- ?
+Q50. What should be the umask value to set the default permission of file as rwxrw-rw- ?
+

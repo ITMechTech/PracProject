@@ -1,0 +1,3 @@
+item	 menuprice	 quantity	 toltalcost
+MatkaPaneer		 280		 2		 560
+please pay 560

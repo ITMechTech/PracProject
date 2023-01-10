@@ -1,0 +1,5 @@
+Item	 SoupName	 UnitPrice	 TotalPrice
+corn	 25		 2		 50
+vegclear	 20		 4		 80
+please pay 130
+please come again

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+Name='Saurabh Joshi'
+AGE=25
+ADDRESS="Shree society,plot number 32,Mayur park,Aurangabad-431003"
+STRING="${Name} Belongs to ${ADDRESS} having Age ${AGE}"
+echo $STRING

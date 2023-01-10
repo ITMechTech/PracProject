@@ -1,0 +1,37 @@
+#!/bin/bash
+echo "Below are my list of soups"
+echo -e "Item\t SoupName\t UnitPrice\t TotalPrice" > printmenu.txt
+select SOUP in corn manchow tamato chicken vegclear Exit
+do
+  case "${SOUP}" in
+  "corn")
+      COST=25
+      ;;
+  "manchow")
+      COST=35
+      ;;  
+  "tamato")
+      COST=40
+      ;;
+  "chicken")
+      COST=45
+      ;;
+  "vegclear")
+      COST=20
+      ;;
+  "Exit")
+      break;;
+  *)
+      echo "You choosen wrong choice"
+      break;;
+  esac
+  
+  read -p "how much portion : " PORTION
+  TOTCOST=`expr ${PORTION} \* ${COST}`
+  echo -e "${SOUP}\t ${COST}\t\t ${PORTION}\t\t ${TOTCOST}" >> printmenu.txt
+  FINALPRICE=`expr ${FINALPRICE} + ${TOTCOST}`
+done
+echo "Please Pay ${FINALPRICE}" >> printmenu.txt
+echo "Please come again" >> printmenu.txt
+
+cat printmenu.txt

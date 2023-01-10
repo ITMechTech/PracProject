@@ -1,0 +1,11 @@
+function play()
+{
+
+   echo 
+   echo "Playing"
+   echo "-------"
+   echo "Go To park with Bat and Ball"
+   echo "Call the Friends with similar age group"
+   echo "Play for 1 hour"
+   echo "Return back to home"
+}

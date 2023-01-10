@@ -1,0 +1,18 @@
+AWS Certified Cloud Practitioner- Foundational
+AWS Certified Solutions Architect - Associate
+AWS Certified Developer - Associate
+AWS Certified SysOps Administrator - Associate
+AWS Certified Solutions Architect - Professional
+AWS Certified DevOps Engineer - Professional
+AWS Certified Security - Specialty
+AWS Certified Big Data - Speciality
+AWS Certified Advanced Networking - Speciality
+AWS Certified Machine Learning - Speciality
+AWS Certified Alexa Skill Builder -Speciality
+Basics of AWS cloud and global infrastructure.
+Principles of AWS cloud architecture.
+AWS cloud value propositions and key services on the AWS platform and their use cases.
+Describes the characteristics of deploying and operating in the AWS platform. 
+Identify technical assistance and documentation.
+Explain the basics of security and compliance aspects of the AWS platform.
+Define pricing models, account management, and billing.

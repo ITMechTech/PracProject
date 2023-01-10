@@ -1,0 +1,28 @@
+
+function freshness()
+{
+      echo
+      echo "Being fresh"
+      echo "-----------"
+      echo "Brush your Teeth"
+      echo "Have a clean Bath"
+      echo "Dress up Well"
+}
+
+function breakfast()
+{
+      echo
+      echo "Do Breakfast"
+      echo "-------------"
+      echo -e "Sunday:Eggomlet+Bread\nMonday:Poha\nTuesday:Upma\nWednesday:chicken\nThursday:Alu wada\nFriday:Sabudana khichidi\nSaturday:Wadapav"
+}
+
+function gotooffice()
+{
+ 
+      echo
+      echo "Going to Office"
+      echo "---------------"
+      echo "collect Bike/Car, Office Bag"
+      echo "Have a Smooth Drive"
+}

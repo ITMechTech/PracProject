@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DT=`date +'%Y%m%d%H%M'`
+
+  cd /home/ec2-user/
+  cp stut.txt /home/ec2-user/backup/stut_${DT}.txt
+  cd /home/ec2-user/backup/
+  gzip stut_${DT}.txt
+
+
+  cd /home/ec2-user/
+  cp emp.txt /home/ec2-user/backup/emp_${DT}.txt
+  cd /home/ec2-user/backup/
+  gzip emp_${DT}.txt

@@ -1,0 +1,6 @@
+Welcome to Linux!
+Linux is a free and open opensource operating system that is mostly used by
+devlopers and in production servers for hosting crucial components such as web
+and databse servers Linux has also made a name for itself is pcs.
+Biginners looking to experiment with Linux can get started with friendlier Linux
+distibutions such as ubuntu, mint,fedora and Elementary Os
